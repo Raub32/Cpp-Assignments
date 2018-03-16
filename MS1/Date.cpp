@@ -32,22 +32,22 @@ namespace AMA {
 
 	Date::Date() {
 	//set object to safe empty state
-		year = 0000;
-		month = 0;
-		day_of_month = 0;
+        year = 00000;
+		month = 00;
+		day_of_month = 00;
 
 	//set ERROR STATE to 0
-		errorCode(0);
+		errorCode(NO_ERROR);
 
 	//set comparison variable to 0
-		dateIsRecent = 0;
+		comparator = 0;
 	};
 
 	Date::Date(int year, int month, int day) {
 	//check if numbers are in range in order or year, month, day
 		int leapYear = year % 4 ? 1 : 0;
 
-		if (year < 2030 && year > 2012 && month > 0 && month < 12 && day > 0 && day < day + leapYear) {
+		if (year < max_year && year > min_year && month > 0 && month < 12 && day > 0 && mdays(month, year) > 0){
 			//set values and compare
 			cout << "comparison" << endl;
 		}
@@ -90,9 +90,7 @@ namespace AMA {
 
 	int Date::errCode() const {
 	//return error state
-		cout << errorState << endl;
-		return 2;
-
+		return errorState;
 	};
 
 	bool Date::bad() const {
@@ -103,17 +101,18 @@ namespace AMA {
 	istream& Date::read(istream& istr) {
 	//read date from console in formate YYYY/MM/DD
 		
-		//if fail to read set error staet to CIN_FAILED
+		//if fail to read set error state to CIN_FAILED
+		istr >> year >> month >> day_of_month;
+
+		//call istr.fail() should return true
 		if (istr.fail()) {
-			cout << "failed";
+			errorState = CIN_FAILED;
 			return istr;
 		}
 		else {
+			//return reference to istream object
 			return istr;
 		}
-			//call istr.fail() should return true
-		
-		//return reference to istream object
 	};
 
 	ostream& Date::write(ostream& ostr) const {
