@@ -31,15 +31,20 @@ bool yes();
 int main() {
 	int ret = 0;
 	bool ok = true;
-
+    //if return if true
 	if (ok) {
+        //print this
 		cout << "Checking defined and constant values: " << endl;
 	}
-	if (ok && MIN_YEAR != 2000) {
-		cout << "Minimum year must be 2000" << endl;
+    //if return if true and min year is not equal to 200
+	if (ok && min_year != 2000) {
+        //print this and set ok val to false
+		cout << "Minimum year must be 2000" << endl;	
 		ok = false;
 	}
-	if (ok && MAX_YEAR != 2030) {
+    //if return is true and max year is not equal to 2030
+	if (ok && max_year != 2030) {
+        
 		cout << "Maximum year must be 2030" << endl;
 		ok = false;
 	}
