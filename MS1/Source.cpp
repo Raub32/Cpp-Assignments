@@ -35,11 +35,11 @@ int main() {
 	if (ok) {
 		cout << "Checking defined and constant values: " << endl;
 	}
-	if (ok && min_year != 2000) {
+	if (ok && MIN_YEAR != 2000) {
 		cout << "Minimum year must be 2000" << endl;
 		ok = false;
 	}
-	if (ok && max_year != 2030) {
+	if (ok && MAX_YEAR != 2030) {
 		cout << "Maximum year must be 2030" << endl;
 		ok = false;
 	}
