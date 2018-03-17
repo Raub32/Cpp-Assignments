@@ -45,10 +45,13 @@ namespace AMA {
 
 	Date::Date(int year, int month, int day) {
 	//check if numbers are in range in order or year, month, day
-		int leapYear = year % 4 ? 1 : 0;
+		int _day = mdays(month, year);
 
-		if (year < max_year && year > min_year && month > 0 && month < 12 && day > 0 && mdays(month, year) > 0){
+		if (year < max_year && year > min_year && month > 0 && month < 12 && day > 0 &&  day > 0){
 			//set values and compare
+			this->year = year;
+			this->month = month;
+			this->day_of_month = day;
 			cout << "comparison" << endl;
 		}
 		else {
@@ -70,12 +73,12 @@ namespace AMA {
 
 	bool Date::operator<(const Date& rhs) const {
 		//check if this object's members is less than received object's propery members
-		return *this != rhs && this->year < rhs.year && this->month < rhs.month && this->day_of_month < rhs.day_of_month ? true : false;
+		return this->year < rhs.year || this->month < rhs.month || this->day_of_month < rhs.day_of_month ? true : false;
 	};
 
 	bool Date::operator>(const Date& rhs) const {
 		//check if this object's members is greater than received object's property members
-		return *this < rhs ? false : true;
+		return *this < rhs == false ? true : false;
 	};
 
 	bool Date::operator<=(const Date& rhs) const {
@@ -103,10 +106,22 @@ namespace AMA {
 		
 		//if fail to read set error state to CIN_FAILED
 		istr >> year >> month >> day_of_month;
-
+		
 		//call istr.fail() should return true
 		if (istr.fail()) {
-			errorState = CIN_FAILED;
+			errorCode(CIN_FAILED);
+			return istr;
+		}
+		else if (year > max_year || year < min_year) {
+			errorCode(YEAR_ERROR);
+			return istr;
+		}
+		else if(month > 12){
+			errorCode(MON_ERROR);
+			return istr;
+		}
+		else if ((year % 4 >= 1 && day_of_month > 28) || (year % 4 == 0 && day_of_month > 29)) {
+			errorCode(DAY_ERROR);
 			return istr;
 		}
 		else {
@@ -119,16 +134,18 @@ namespace AMA {
 	//output date to ostream object in format YYYY/MM/DD
 		ostr << year << "/" << month << "/" << day_of_month;
 		return ostr;
- 	};
+ 	}
 
-	ostream& operator<<(ostream& ostr, const Date & c){
+	ostream& operator<<(ostream& ostr, const Date &c){
 	//output date from object
-		return c.write(ostr);
+		c.write(ostr);
+        return ostr;
 	};
 
-	istream& operator>>(istream& istr, Date &c){
+	istream& operator>>(istream& istr, Date& c){
 	//read date and store in object
-		return c.read(istr);
+        c.read(istr);
+        return istr;
 	};
 
 }

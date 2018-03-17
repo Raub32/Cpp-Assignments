@@ -57,9 +57,10 @@ namespace AMA {
 		bool bad() const;
 		std::istream& read(std::istream& istr);
 		std::ostream& write(std::ostream& ostr) const;
-		friend std::ostream& operator<<(const std::ostream& ostr, const Date & c);
-		friend std::istream& operator>>(std::istream& istr, const Date &c);
 	};
+	
+	std::ostream& operator<<(const std::ostream& ostr, const Date & c);
+	std::istream& operator>>(std::istream& istr, Date &c);
 }
 
 #endif
