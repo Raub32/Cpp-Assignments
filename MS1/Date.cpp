@@ -45,18 +45,17 @@ namespace AMA {
 
 	Date::Date(int year, int month, int day) {
 	//check if numbers are in range in order or year, month, day
-		int _day = mdays(month, year);
+	
+		errorState = year > min_year && year < max_year ? 0 : YEAR_ERROR;
+		errorState = month >= 12 && month > 0 ? 0 : YEAR_ERROR;
+		errorState = (year % 4 >= 1 && day > 28) || (year % 4 == 0 && day > 29) ? YEAR_ERROR : 0;
 
-		if (year < max_year && year > min_year && month > 0 && month < 12 && day > 0 &&  day > 0){
+		if (errorState == 0){
 			//set values and compare
 			this->year = year;
 			this->month = month;
 			this->day_of_month = day;
 			cout << "comparison" << endl;
-		}
-		else {
-			//else set error state if error
-			cout << "error" << endl;
 		}
 	};
 
@@ -132,7 +131,7 @@ namespace AMA {
 
 	ostream& Date::write(ostream& ostr) const {
 	//output date to ostream object in format YYYY/MM/DD
-		ostr << year << "/" << month << "/" << day_of_month;
+		//ostr << year << "/" << month << "/" << day_of_month;
 		return ostr;
  	}
 
