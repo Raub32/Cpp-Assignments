@@ -13,7 +13,7 @@
 // Name               Date                 Reason
 /////////////////////////////////////////////////////////////////
 #include "Date.h"
-using namespace std;
+
 namespace AMA {
 
 	// number of days in month mon_ and year year_
@@ -55,7 +55,7 @@ namespace AMA {
 			this->year = year;
 			this->month = month;
 			this->day_of_month = day;
-			cout << "comparison" << endl;
+            std::cout << "comparison" << std::endl;
 		}
 	};
 
@@ -100,9 +100,9 @@ namespace AMA {
 		return errorState != 0 ? true : false;
 	};
 
-	istream& Date::read(istream& istr) {
+	std::istream& Date::read(std::istream& istr) {
 	//read date from console in formate YYYY/MM/DD
-		
+        char seperator;
 		//if fail to read set error state to CIN_FAILED
 		istr >> year >> month >> day_of_month;
 		
@@ -129,19 +129,22 @@ namespace AMA {
 		}
 	};
 
-	ostream& Date::write(ostream& ostr) const {
+	std::ostream& Date::write(std::ostream& ostr) const {
 	//output date to ostream object in format YYYY/MM/DD
-		//ostr << year << "/" << month << "/" << day_of_month;
+		//ostr << this->year << "/" << this->month << "/" << this->day_of_month;
+        //ostr.width(2);
+          ostr << year << "/" << ostr.width(2) << ostr.fill('0') << month << "/" << ostr.width(2) << ostr.fill('0') << day_of_month;
+        //str << year << "/" << month << "/" << day_of_month;
 		return ostr;
  	}
 
-	ostream& operator<<(ostream& ostr, const Date &c){
+	std::ostream& operator<<(std::ostream& ostr, const Date &c){
 	//output date from object
 		c.write(ostr);
         return ostr;
 	};
 
-	istream& operator>>(istream& istr, Date& c){
+    std::istream& operator>>(std::istream& istr, Date& c){
 	//read date and store in object
         c.read(istr);
         return istr;
