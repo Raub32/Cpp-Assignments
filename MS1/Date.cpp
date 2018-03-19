@@ -131,10 +131,7 @@ namespace AMA {
 
 	std::ostream& Date::write(std::ostream& ostr) const {
 	//output date to ostream object in format YYYY/MM/DD
-		//ostr << this->year << "/" << this->month << "/" << this->day_of_month;
-        //ostr.width(2);
-          ostr << year << "/" << ostr.width(2) << ostr.fill('0') << month << "/" << ostr.width(2) << ostr.fill('0') << day_of_month;
-        //str << year << "/" << month << "/" << day_of_month;
+        ostr << year << "/" << ostr.width(2) << ostr.fill('0') << month << "/" << ostr.width(2) << ostr.fill('0') << day_of_month;
 		return ostr;
  	}
 
