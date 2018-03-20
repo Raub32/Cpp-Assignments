@@ -32,15 +32,15 @@ namespace AMA {
 
 	Date::Date() {
 	//set object to safe empty state
-        year = 00000;
-		month = 00;
-		day_of_month = 00;
+       this -> year = 0;
+       this -> month = 0;
+       this ->	day_of_month = 0;
 
 	//set ERROR STATE to 0
 		errorCode(NO_ERROR);
 
 	//set comparison variable to 0
-		comparator = 0;
+		this -> comparator = 0;
 	};
 
 	Date::Date(int year, int month, int day) {
@@ -57,6 +57,7 @@ namespace AMA {
 			this->day_of_month = day;
             std::cout << "comparison" << std::endl;
 		}
+        
 	};
 
 	bool Date::operator==(const Date& rhs) const {
@@ -128,23 +129,23 @@ namespace AMA {
 			return istr;
 		}
 	};
-
+    
 	std::ostream& Date::write(std::ostream& ostr) const {
-	//output date to ostream object in format YYYY/MM/DD
-        ostr << year << "/" << ostr.width(2) << ostr.fill('0') << month << "/" << ostr.width(2) << ostr.fill('0') << day_of_month;
+	//output date to ostream object in format YYYY/MÇM/DD
+		
+          ostr << year << "/" << ostr.width(2) << ostr.fill('0') << month << "/" << ostr.width(2) << ostr.fill('0') << day_of_month;
 		return ostr;
  	}
 
 	std::ostream& operator<<(std::ostream& ostr, const Date &c){
 	//output date from object
-		c.write(ostr);
-        return ostr;
+		return c.write(ostr);
+    
 	};
 
     std::istream& operator>>(std::istream& istr, Date& c){
 	//read date and store in object
-        c.read(istr);
-        return istr;
+        return c.read(istr);
 	};
 
 }

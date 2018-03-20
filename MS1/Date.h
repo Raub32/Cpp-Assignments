@@ -55,7 +55,7 @@ namespace AMA {
 
 		int errCode() const;
 		bool bad() const;
-		std::istream& read(std::istream& istr);
+        std::istream& read(std::istream& istr);
 		std::ostream& write(std::ostream& ostr) const;
 	};
 	
