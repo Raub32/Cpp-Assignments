@@ -77,8 +77,8 @@ int main() {
 		cout << "Testing the Date() constructor and the operator << overload; " << endl;
 		Date Empty, Temp(-1, 1, 1);
 		cout << "Are these two dates the same? (regardless of format)" << endl
-//            << "1- " << Empty << endl
-//            << "2- " << Temp << endl
+            << "1- " << Empty << endl
+            << "2- " << Temp << endl
 			<< "(y)es/(n)o: ";
 
 		if (!yes()) {

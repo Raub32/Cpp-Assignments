@@ -13,6 +13,9 @@
 // Name               Date                 Reason
 /////////////////////////////////////////////////////////////////
 #include "Date.h"
+#include <iostream>
+#include <iomanip>
+#include <cstring>
 
 namespace AMA {
 
@@ -42,23 +45,45 @@ namespace AMA {
 	//set comparison variable to 0
         comparator = 0;
 	};
-
-	Date::Date(int year, int month, int day) {
-	//check if numbers are in range in order or year, month, day
-	
-		errorState = year > min_year && year < max_year ? 0 : YEAR_ERROR;
-		errorState = month >= 12 && month > 0 ? 0 : YEAR_ERROR;
-		errorState = (year % 4 >= 1 && day > 28) || (year % 4 == 0 && day > 29) ? YEAR_ERROR : 0;
-
-		if (errorState == 0){
-			//set values and compare
-			year = year;
-			month = month;
-			day_of_month = day;
-            std::cout << "comparison" << std::endl;
-		}
+    
+    bool Date:: isValid(int arg1, int arg2, int arg3 ){
         
-	};
+        if( arg1 < min_year || year > max_year){
+            errorCode(YEAR_ERROR);
+            return false;
+            
+        }else if ( arg2 > 12 || arg2 < 1 ){
+            errorCode(MON_ERROR);
+            return false;
+        }else if(arg3 < 1 || arg3 > mdays(arg1, arg2)){
+            errorCode(DAY_ERROR);
+            return false;
+        }
+        
+        return true;
+    }
+    
+	Date::Date(int _year, int _month, int _day) {
+	//check if numbers are in range in order or year, month, day
+        
+//        errorState = year > min_year && year < max_year ? 0 : YEAR_ERROR;
+//        errorState = month >= 12 && month > 0 ? 0 : YEAR_ERROR;
+//        errorState = (year % 4 >= 1 && day > 28) || (year % 4 == 0 && day > 29) ? YEAR_ERROR : 0;
+
+		if (isValid(_year, _month, _day)){
+			//set values and compare
+			this->year = _year;
+			this->month = _month;
+			this->day_of_month = _day;
+            comparator = _year * 372 * _month * 13 * _day;
+            errorCode(NO_ERROR);
+        }else{
+            this->year = 0;
+            this->month = 0;
+            this->day_of_month = 0;
+            comparator = 0;
+        }
+	}
 
 	bool Date::operator==(const Date& rhs) const {
 		//compare this object with received onject property members
@@ -105,16 +130,14 @@ namespace AMA {
 
 	std::istream& Date::read(std::istream& istr) {
 	//read date from console in formate YYYY/MM/DD
-        char seperator= 0;
+        char seperator;
 		//if fail to read set error state to CIN_FAILED
-        istr >> year >> getChar(&seperator) >> month >> getChar(&seperator) >> day_of_month;
+        istr >> year >> seperator >> month >> seperator >> day_of_month;
 		
 		//call istr.fail() should return true
-		if (istr.fail()) {
-			errorCode(CIN_FAILED);
-			return istr;
-		}
-		else if (year > max_year || year < min_year) {
+		if (!istr.fail()) {
+		
+        if (year > max_year || year < min_year) {
 			errorCode(YEAR_ERROR);
 			return istr;
 		}
@@ -125,18 +148,20 @@ namespace AMA {
 		else if ((year % 4 >= 1 && day_of_month > 28) || (year % 4 == 0 && day_of_month > 29)) {
 			errorCode(DAY_ERROR);
 			return istr;
-		}
-		else {
-			//return reference to istream object
-			return istr;
-		}
-    };
+        }
+        }else{
+            errorCode(CIN_FAILED);
+        }
+        return istr;
+    }
     
 	std::ostream& Date::write(std::ostream& ostr) const {
 	//output date to ostream object in format YYYY/MÇM/DD
+        ostr << year;
+//        << "/" << ostr.width(2) << ostr.fill('0') << month << "/" << ostr.width(2) << ostr.fill('0') << day_of_month;
+        
+        return ostr;
 		
-          ostr << year << "/" << ostr.width(2) << ostr.fill('0') << month << "/" << ostr.width(2) << ostr.fill('0') << day_of_month;
-		return ostr;
  	}
 
 	std::ostream& operator<<(std::ostream& ostr, const Date &c){

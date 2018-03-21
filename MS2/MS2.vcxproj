@@ -10,6 +10,9 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ms2_tester.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{63984411-3F2F-4B07-BF83-1DA8A07E5FE4}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
@@ -76,13 +79,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="ErrorMessage.cpp" />
-    <ClCompile Include="ms2_prof.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="ErrorMessage.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
