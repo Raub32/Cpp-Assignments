@@ -1,6 +1,7 @@
 // Final Project Milestone 1 - Date Module Tester
-// Version 3.2
-// Date	2018-03-02
+// Version 3.3
+// ms1_tester.cpp
+// Date	2018-03-10
 // Author	Chris Szalwinski, Fardad Soleimanloo
 // Description
 // This program test the student implementation of the Date class
@@ -15,6 +16,7 @@
 // Name               Date                 Reason
 // CS                 2017-10-11           Fall semester upgrade
 // CS                 2018-03-02           Final Draft 20181
+// CS                 2018-03-10           entered -> accepted
 /////////////////////////////////////////////////////////////////
 #include <iostream>
 #include <cstring>
@@ -31,20 +33,15 @@ bool yes();
 int main() {
 	int ret = 0;
 	bool ok = true;
-    //if return if true
+
 	if (ok) {
-        //print this
 		cout << "Checking defined and constant values: " << endl;
 	}
-    //if return if true and min year is not equal to 200
 	if (ok && min_year != 2000) {
-        //print this and set ok val to false
-		cout << "Minimum year must be 2000" << endl;	
+		cout << "Minimum year must be 2000" << endl;
 		ok = false;
 	}
-    //if return is true and max year is not equal to 2030
 	if (ok && max_year != 2030) {
-        
 		cout << "Maximum year must be 2030" << endl;
 		ok = false;
 	}
@@ -80,8 +77,8 @@ int main() {
 		cout << "Testing the Date() constructor and the operator << overload; " << endl;
 		Date Empty, Temp(-1, 1, 1);
 		cout << "Are these two dates the same? (regardless of format)" << endl
-			<< "1- " << Empty << endl
-			<< "2- " << Temp << endl
+//            << "1- " << Empty << endl
+//            << "2- " << Temp << endl
 			<< "(y)es/(n)o: ";
 
 		if (!yes()) {
@@ -103,7 +100,6 @@ int main() {
 			cout << "Either the constructor or operator>> is not implemented correctly." << endl;
 			ok = false;
 		}
-
 		else {
 			cout << "Passed!" << endl;
 		}
@@ -119,7 +115,7 @@ int main() {
 			cout << "passed!" << endl;
 		}
 		else {
-			//cout << A << " is equal to " << B << " but operator== returns otherwise!" << endl;
+//            cout << A << " is equal to " << B << " but operator== returns otherwise!" << endl;
 			ok = false;
 		}
 	}
@@ -132,7 +128,7 @@ int main() {
 			cout << "passed!" << endl;
 		}
 		else {
-			//cout << A << " is equal to " << B << endl << "but operator>= returns otherwise!" << endl;
+//            cout << A << " is equal to " << B << endl << "but operator>= returns otherwise!" << endl;
 			ok = false;
 		}
 	}
@@ -145,7 +141,7 @@ int main() {
 			cout << "passed!" << endl;
 		}
 		else {
-		//	cout << A << " is equal to " << B << endl << "but operator<= returns otherwise!" << endl;
+//            cout << A << " is equal to " << B << endl << "but operator<= returns otherwise!" << endl;
 			ok = false;
 		}
 	}
@@ -158,7 +154,7 @@ int main() {
 			cout << "passed!" << endl;
 		}
 		else {
-			//cout << A << " is not equal to " << B << " but operator!= returns otherwise!" << endl;
+//            cout << A << " is not equal to " << B << " but operator!= returns otherwise!" << endl;
 			ok = false;
 		}
 	}
@@ -171,7 +167,7 @@ int main() {
 			cout << "passed!" << endl;
 		}
 		else {
-		//	cout << A << " is less than " << B << " but operator< returns otherwise!" << endl;
+//            cout << A << " is less than " << B << " but operator< returns otherwise!" << endl;
 			ok = false;
 		}
 	}
@@ -184,7 +180,7 @@ int main() {
 			cout << "passed!" << endl;
 		}
 		else {
-			//cout << B << " is greater than " << B << " but operator> returns otherwise!" << endl;
+//            cout << B << " is greater than " << B << " but operator> returns otherwise!" << endl;
 			ok = false;
 		}
 	}
@@ -193,11 +189,11 @@ int main() {
 		Date A(2018, 10, 17);
 		Date B(2018, 10, 18);
 		cout << "Testing operator<=" << endl;
-		if (A <= B) {
+		if (A < B) {
 			cout << "passed!" << endl;
 		}
 		else {
-			//cout << A << " is less than " << B << " but operator<= returns otherwise!" << endl;
+//            cout << A << " is less than " << B << " but operator<= returns otherwise!" << endl;
 			ok = false;
 		}
 	}
@@ -210,11 +206,11 @@ int main() {
 			cout << "passed!" << endl;
 		}
 		else {
-		//	cout << B << " is greater than " << B << " but operator>= returns otherwise!" << endl;
+//            cout << B << " is greater than " << B << " but operator>= returns otherwise!" << endl;
 			ok = false;
 		}
 	}
-	
+
 	if (ok) {
 		Date A;
 		cout << "Testing error handling in read function;" << endl;
@@ -238,7 +234,7 @@ int main() {
 		cout << "Testing year validation, " << endl;
 		cout << "Please enter the following string \"10/1/1\": ";
 		cin >> A;
-		//cout << "You entered: " << A << endl;
+//        cout << "You accepted: " << A << endl;
 		if (A.errCode() == YEAR_ERROR) {
 			cout << "passed!" << endl;
 		}
@@ -255,7 +251,7 @@ int main() {
 		cout << "Testing month validation, " << endl;
 		cout << "Please enter the following string \"2000/13/1\": ";
 		cin >> A;
-		//cout << "You entered: " << A << endl;
+//        cout << "You accepted: " << A << endl;
 		if (A.errCode() == MON_ERROR) {
 			cout << "Passed" << endl;
 		}
@@ -272,7 +268,7 @@ int main() {
 		cout << "Testing day validation, " << endl;
 		cout << "Please enter the following string \"2000/1/50\": ";
 		cin >> A;
-		//cout << "You entered: " << A << endl;
+//        cout << "You accepted: " << A << endl;
 		if (A.errCode() == DAY_ERROR) {
 			cout << "Passed!" << endl;
 		}
@@ -283,13 +279,13 @@ int main() {
 		}
 		cin.ignore(2000, '\n');
 	}
-	
+
 	if (ok) {
 		Date A;
 		cout << "Testing day validation, leap year:" << endl;
 		cout << "Please enter the following string \"2016/2/29\": ";
 		cin >> A;
-		//cout << "You entered: " << A << endl;
+//        cout << "You accepted: " << A << endl;
 		if (A.errCode() == DAY_ERROR) {
 			cout << "Your read function does not check the day entry limits using mday()" << endl;
 			ok = false;
@@ -299,7 +295,7 @@ int main() {
 		}
 		cin.ignore(2000, '\n');
 	}
-	
+
 	if (ok) {
 		cout << "You passed all the tests!" << endl;
 	}
@@ -307,7 +303,7 @@ int main() {
 		cout << "You did not pass all the tests, keep working on your project!" << endl;
 		ret = 1;
 	}
-	
+
 	return ret;
 }
 

@@ -32,15 +32,15 @@ namespace AMA {
 
 	Date::Date() {
 	//set object to safe empty state
-       this -> year = 0;
-       this -> month = 0;
-       this ->	day_of_month = 0;
+       this->year = 0;
+       this->month = 0;
+       this->day_of_month = 0;
 
 	//set ERROR STATE to 0
 		errorCode(NO_ERROR);
 
 	//set comparison variable to 0
-		this -> comparator = 0;
+        comparator = 0;
 	};
 
 	Date::Date(int year, int month, int day) {
@@ -52,9 +52,9 @@ namespace AMA {
 
 		if (errorState == 0){
 			//set values and compare
-			this->year = year;
-			this->month = month;
-			this->day_of_month = day;
+			year = year;
+			month = month;
+			day_of_month = day;
             std::cout << "comparison" << std::endl;
 		}
         
@@ -62,12 +62,14 @@ namespace AMA {
 
 	bool Date::operator==(const Date& rhs) const {
 		//compare this object with received onject property members
+        std::cout << " == operator overload called " << std::endl;
 		return this->year == rhs.year && this->month == rhs.month && this->day_of_month  == rhs.day_of_month ? true : false;
 	};
 
 	bool Date::operator!=(const Date& rhs) const {
 		//compare this object with received onject property members
 		//return true if is not equal
+        std::cout << "!= operator overload called " << std::endl;
 		return *this == rhs == false? true : false;
 	};
 
@@ -103,9 +105,9 @@ namespace AMA {
 
 	std::istream& Date::read(std::istream& istr) {
 	//read date from console in formate YYYY/MM/DD
-        char seperator;
+        char seperator= 0;
 		//if fail to read set error state to CIN_FAILED
-		istr >> year >> month >> day_of_month;
+        istr >> year >> getChar(&seperator) >> month >> getChar(&seperator) >> day_of_month;
 		
 		//call istr.fail() should return true
 		if (istr.fail()) {
@@ -128,8 +130,8 @@ namespace AMA {
 			//return reference to istream object
 			return istr;
 		}
-	};
-    
+    };
+    
 	std::ostream& Date::write(std::ostream& ostr) const {
 	//output date to ostream object in format YYYY/MÇM/DD
 		
