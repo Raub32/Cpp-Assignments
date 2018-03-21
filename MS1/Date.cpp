@@ -16,6 +16,7 @@
 #include <iostream>
 #include <iomanip>
 #include <cstring>
+using namespace std;
 
 namespace AMA {
 
@@ -65,10 +66,6 @@ namespace AMA {
     
 	Date::Date(int _year, int _month, int _day) {
 	//check if numbers are in range in order or year, month, day
-        
-//        errorState = year > min_year && year < max_year ? 0 : YEAR_ERROR;
-//        errorState = month >= 12 && month > 0 ? 0 : YEAR_ERROR;
-//        errorState = (year % 4 >= 1 && day > 28) || (year % 4 == 0 && day > 29) ? YEAR_ERROR : 0;
 
 		if (isValid(_year, _month, _day)){
 			//set values and compare
@@ -155,24 +152,21 @@ namespace AMA {
         return istr;
     }
     
-	std::ostream& Date::write(std::ostream& ostr) const {
+	ostream& Date::write(ostream& ostr) const {
 	//output date to ostream object in format YYYY/MÇM/DD
-        ostr << year;
-//        << "/" << ostr.width(2) << ostr.fill('0') << month << "/" << ostr.width(2) << ostr.fill('0') << day_of_month;
-        
+        ostr << year << "/" << ostr.width(2) << ostr.fill('0') << month << "/" << ostr.width(2) << ostr.fill('0') << day_of_month;
         return ostr;
-		
  	}
 
-	std::ostream& operator<<(std::ostream& ostr, const Date &c){
+	ostream& operator<<(ostream& ostr, const Date &c){
 	//output date from object
 		return c.write(ostr);
     
-	};
+	}
 
-    std::istream& operator>>(std::istream& istr, Date& c){
+    istream& operator>>(istream& istr, Date& c){
 	//read date and store in object
         return c.read(istr);
-	};
+	}
 
 }

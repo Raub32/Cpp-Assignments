@@ -60,7 +60,7 @@ namespace AMA {
         bool isValid(int arg1, int ag2, int arg3 );
 	};
 	
-	std::ostream& operator<<(const std::ostream& ostr, const Date & c);
+	std::ostream& operator<<(std::ostream& ostr, const Date & c);
 	std::istream& operator>>(std::istream& istr, Date &c);
 }
 
