@@ -13,11 +13,8 @@
 // Name               Date                 Reason
 /////////////////////////////////////////////////////////////////
 #include "Date.h"
-#include <iostream>
 #include <iomanip>
 #include <cstring>
-using namespace std;
-
 namespace AMA {
 
 	// number of days in month mon_ and year year_
@@ -47,16 +44,15 @@ namespace AMA {
         comparator = 0;
 	};
     
-    bool Date:: isValid(int arg1, int arg2, int arg3 ){
-        
-        if( arg1 < min_year || year > max_year){
+    bool Date:: isValid(int yr, int mt, int dy ){
+        if( yr < min_year || yr > max_year){
             errorCode(YEAR_ERROR);
             return false;
             
-        }else if ( arg2 > 12 || arg2 < 1 ){
+        }else if ( mt > 12 || mt < 1 ){
             errorCode(MON_ERROR);
             return false;
-        }else if(arg3 < 1 || arg3 > mdays(arg1, arg2)){
+        }else if(dy < 1 || dy > mdays(mt, yr)){
             errorCode(DAY_ERROR);
             return false;
         }
@@ -72,6 +68,7 @@ namespace AMA {
 			this->year = _year;
 			this->month = _month;
 			this->day_of_month = _day;
+            
             comparator = _year * 372 * _month * 13 * _day;
             errorCode(NO_ERROR);
         }else{
@@ -84,15 +81,13 @@ namespace AMA {
 
 	bool Date::operator==(const Date& rhs) const {
 		//compare this object with received onject property members
-        std::cout << " == operator overload called " << std::endl;
 		return this->year == rhs.year && this->month == rhs.month && this->day_of_month  == rhs.day_of_month ? true : false;
 	};
 
 	bool Date::operator!=(const Date& rhs) const {
 		//compare this object with received onject property members
 		//return true if is not equal
-        std::cout << "!= operator overload called " << std::endl;
-		return *this == rhs == false? true : false;
+		return (*this == rhs) == true? false : true;
 	};
 
 	bool Date::operator<(const Date& rhs) const {
@@ -102,7 +97,7 @@ namespace AMA {
 
 	bool Date::operator>(const Date& rhs) const {
 		//check if this object's members is greater than received object's property members
-		return *this < rhs == false ? true : false;
+		return (*this < rhs) == false ? true : false;
 	};
 
 	bool Date::operator<=(const Date& rhs) const {
@@ -128,43 +123,59 @@ namespace AMA {
 	std::istream& Date::read(std::istream& istr) {
 	//read date from console in formate YYYY/MM/DD
         char seperator;
+        
 		//if fail to read set error state to CIN_FAILED
         istr >> year >> seperator >> month >> seperator >> day_of_month;
-		
+        
 		//call istr.fail() should return true
 		if (!istr.fail()) {
-		
-        if (year > max_year || year < min_year) {
-			errorCode(YEAR_ERROR);
-			return istr;
-		}
-		else if(month > 12){
-			errorCode(MON_ERROR);
-			return istr;
-		}
-		else if ((year % 4 >= 1 && day_of_month > 28) || (year % 4 == 0 && day_of_month > 29)) {
-			errorCode(DAY_ERROR);
-			return istr;
-        }
+            if (year > max_year || year < min_year) {
+                errorCode(YEAR_ERROR);
+                this->year = 0;
+                this->month = 0;
+                this->day_of_month = 0;
+            }
+            else if(month > 12){
+                errorCode(MON_ERROR);
+                
+                this->year = 0;
+                this->month = 0;
+                this->day_of_month = 0;
+            }
+            else if ( day_of_month > mdays(month, year)) {
+                errorCode(DAY_ERROR);
+                
+                this->year = 0;
+                this->month = 0;
+                this->day_of_month = 0;
+            }
         }else{
             errorCode(CIN_FAILED);
         }
         return istr;
     }
     
-	ostream& Date::write(ostream& ostr) const {
-	//output date to ostream object in format YYYY/MÇM/DD
-        ostr << year << "/" << ostr.width(2) << ostr.fill('0') << month << "/" << ostr.width(2) << ostr.fill('0') << day_of_month;
+    std::ostream& Date::write(std::ostream& ostr) const {
+	//output date to ostream object in format YYYY/MM/DD
+
+        ostr.fill('0');
+        ostr << year << "/" ;
+        ostr.width(2);
+        ostr << month << "/" ;
+        ostr.width(2);
+        ostr <<  day_of_month;
+        
+        
+        
         return ostr;
  	}
 
-	ostream& operator<<(ostream& ostr, const Date &c){
+    std::ostream& operator<<(std::ostream& ostr, const Date &c){
 	//output date from object
 		return c.write(ostr);
-    
 	}
 
-    istream& operator>>(istream& istr, Date& c){
+    std::istream& operator>>(std::istream& istr, Date& c){
 	//read date and store in object
         return c.read(istr);
 	}

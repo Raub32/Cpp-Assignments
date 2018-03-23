@@ -18,7 +18,6 @@
 // CS                 2018-03-02           Final Draft 20181
 // CS                 2018-03-10           entered -> accepted
 /////////////////////////////////////////////////////////////////
-#include <iostream>
 #include <cstring>
 #include <cstdlib>
 #include <iomanip>
@@ -76,12 +75,12 @@ int main() {
 	if (ok) {
 		cout << "Testing the Date() constructor and the operator << overload; " << endl;
 		Date Empty, Temp(-1, 1, 1);
-		cout << "Are these two dates the same? (regardless of format)" << endl
+		cout << " Are these two dates the same? (regardless of format)" << endl
             << "1- " << Empty << endl
             << "2- " << Temp << endl
 			<< "(y)es/(n)o: ";
 
-		if (!yes()) {
+			if (!yes()) {
 			cout << "Either the Date() constructor or the operator << overload is not implemented correctly." << endl;
 			ok = false;
 		}
@@ -89,21 +88,21 @@ int main() {
 			cout << "Passed!" << endl;
 		}
 	}
-	if (ok) {
-		Date A(2018, 10, 18);
-		Date B = A;
-		cout << "Testing Date(int, int, int) constructor and operator>> overload; " << endl;
-		cout << "Enter the following date, 2018/10/18" << endl << ">";;
-		cin >> B;
+    if (ok) {
+        Date A(2018, 10, 18);
+        Date B = A;
+        cout << "Testing Date(int, int, int) constructor and operator>> overload; " << endl;
+        cout << "Enter the following date, 2018/10/18" << endl << ">";;
+        cin >> B;
 
-		if (!equalDates((const char*)&A, (const char*)&B)) {
-			cout << "Either the constructor or operator>> is not implemented correctly." << endl;
-			ok = false;
-		}
-		else {
-			cout << "Passed!" << endl;
-		}
-	}
+        if (!equalDates((const char*)&A, (const char*)&B)) {
+            cout << "Either the constructor or operator>> is not implemented correctly." << endl;
+            ok = false;
+        }
+        else {
+            cout << "Passed!" << endl;
+        }
+    }
 	if (ok) {
 		cout << "Testing the logical operators: " << endl;
 	}
@@ -115,7 +114,7 @@ int main() {
 			cout << "passed!" << endl;
 		}
 		else {
-//            cout << A << " is equal to " << B << " but operator== returns otherwise!" << endl;
+            cout << A << " is equal to " << B << " but operator== returns otherwise!" << endl;
 			ok = false;
 		}
 	}
@@ -128,7 +127,7 @@ int main() {
 			cout << "passed!" << endl;
 		}
 		else {
-//            cout << A << " is equal to " << B << endl << "but operator>= returns otherwise!" << endl;
+            cout << A << " is equal to " << B << endl << "but operator>= returns otherwise!" << endl;
 			ok = false;
 		}
 	}
@@ -141,7 +140,7 @@ int main() {
 			cout << "passed!" << endl;
 		}
 		else {
-//            cout << A << " is equal to " << B << endl << "but operator<= returns otherwise!" << endl;
+            cout << A << " is equal to " << B << endl << "but operator<= returns otherwise!" << endl;
 			ok = false;
 		}
 	}
@@ -154,7 +153,7 @@ int main() {
 			cout << "passed!" << endl;
 		}
 		else {
-//            cout << A << " is not equal to " << B << " but operator!= returns otherwise!" << endl;
+            cout << A << " is not equal to " << B << " but operator!= returns otherwise!" << endl;
 			ok = false;
 		}
 	}
@@ -167,7 +166,7 @@ int main() {
 			cout << "passed!" << endl;
 		}
 		else {
-//            cout << A << " is less than " << B << " but operator< returns otherwise!" << endl;
+            cout << A << " is less than " << B << " but operator< returns otherwise!" << endl;
 			ok = false;
 		}
 	}
@@ -180,7 +179,7 @@ int main() {
 			cout << "passed!" << endl;
 		}
 		else {
-//            cout << B << " is greater than " << B << " but operator> returns otherwise!" << endl;
+            cout << B << " is greater than " << B << " but operator> returns otherwise!" << endl;
 			ok = false;
 		}
 	}
@@ -193,7 +192,7 @@ int main() {
 			cout << "passed!" << endl;
 		}
 		else {
-//            cout << A << " is less than " << B << " but operator<= returns otherwise!" << endl;
+            cout << A << " is less than " << B << " but operator<= returns otherwise!" << endl;
 			ok = false;
 		}
 	}
@@ -206,7 +205,7 @@ int main() {
 			cout << "passed!" << endl;
 		}
 		else {
-//            cout << B << " is greater than " << B << " but operator>= returns otherwise!" << endl;
+            cout << B << " is greater than " << B << " but operator>= returns otherwise!" << endl;
 			ok = false;
 		}
 	}
@@ -234,7 +233,7 @@ int main() {
 		cout << "Testing year validation, " << endl;
 		cout << "Please enter the following string \"10/1/1\": ";
 		cin >> A;
-//        cout << "You accepted: " << A << endl;
+        cout << "You accepted: " << A << endl;
 		if (A.errCode() == YEAR_ERROR) {
 			cout << "passed!" << endl;
 		}
@@ -251,7 +250,7 @@ int main() {
 		cout << "Testing month validation, " << endl;
 		cout << "Please enter the following string \"2000/13/1\": ";
 		cin >> A;
-//        cout << "You accepted: " << A << endl;
+        cout << "You accepted: " << A << endl;
 		if (A.errCode() == MON_ERROR) {
 			cout << "Passed" << endl;
 		}
@@ -268,7 +267,7 @@ int main() {
 		cout << "Testing day validation, " << endl;
 		cout << "Please enter the following string \"2000/1/50\": ";
 		cin >> A;
-//        cout << "You accepted: " << A << endl;
+        cout << "You accepted: " << A << endl;
 		if (A.errCode() == DAY_ERROR) {
 			cout << "Passed!" << endl;
 		}
@@ -285,7 +284,7 @@ int main() {
 		cout << "Testing day validation, leap year:" << endl;
 		cout << "Please enter the following string \"2016/2/29\": ";
 		cin >> A;
-//        cout << "You accepted: " << A << endl;
+        cout << "You accepted: " << A << endl;
 		if (A.errCode() == DAY_ERROR) {
 			cout << "Your read function does not check the day entry limits using mday()" << endl;
 			ok = false;
@@ -302,8 +301,7 @@ int main() {
 	else {
 		cout << "You did not pass all the tests, keep working on your project!" << endl;
 		ret = 1;
-	}
-	system("pause");
+    }
 
 	return ret;
 }

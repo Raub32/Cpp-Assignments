@@ -19,6 +19,7 @@
 #ifndef AMA_DATE_H
 #define AMA_DATE_H
 #include <iostream>
+
 #define NO_ERROR 0
 #define CIN_FAILED 1
 #define YEAR_ERROR 2
@@ -26,8 +27,6 @@
 #define DAY_ERROR 4
 #define max_year 2030
 #define min_year 2000
-
-
 
 namespace AMA {
 
