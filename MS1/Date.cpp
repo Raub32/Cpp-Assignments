@@ -165,8 +165,6 @@ namespace AMA {
         ostr.width(2);
         ostr <<  day_of_month;
         
-        
-        
         return ostr;
  	}
 
