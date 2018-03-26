@@ -11,7 +11,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ErrorState.cpp" />
     <ClCompile Include="ms2_tester.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ErrorState.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{63984411-3F2F-4B07-BF83-1DA8A07E5FE4}</ProjectGuid>

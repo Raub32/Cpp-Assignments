@@ -6,19 +6,19 @@ namespace AMA {
     
     class ErrorState{
         char * msg;
-        
-    public:
-        explicit ErrorState(const char* errorMessage = nullptr);
+	
         ErrorState(const ErrorState& em) = delete;
         ErrorState& operator=(const ErrorState& em) = delete;
+    public:
+        explicit ErrorState(const char* errorMessage = nullptr);
         virtual ~ErrorState();
         void clear();
         bool isClear() const;
         void message(const char* str);
         const char* message()const;
-        friend std::ostream& operator<<(std::ostream& ostr);
+        
     };
-    
+    std::ostream& operator<<(std::ostream& ostr, ErrorState& error);
 }
 
 #endif

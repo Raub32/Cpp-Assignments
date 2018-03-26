@@ -18,5 +18,13 @@
     <ClCompile Include="ms2_tester.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ErrorState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ErrorState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
