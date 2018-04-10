@@ -10,7 +10,7 @@ namespace AMA{
             msg = 0;
 		}
 		else {
-			msg = new char;
+			msg = new char[strlen(errorMessage + 1)];
 			strncpy(msg, errorMessage, strlen(errorMessage));
 		}
     }
@@ -27,7 +27,11 @@ namespace AMA{
     }
     
     bool ErrorState::isClear() const{
-        msg == 0 ? return true : return false;
+        if(msg == 0){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     void ErrorState::message(const char* str){
@@ -41,6 +45,12 @@ namespace AMA{
     }
     
     std::ostream& operator<<(std::ostream& ostr, ErrorState& error){
-        if(!error.isClear() ){ ostr << error.message(); }
-		return ostr;
+        if(!error.isClear() ){
+            ostr << error.message();
+            return ostr;
+        }else{
+            return ostr;
+        }
+    }
+    
 }
