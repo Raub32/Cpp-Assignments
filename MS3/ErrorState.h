@@ -13,8 +13,8 @@ namespace AMA {
         virtual ~ErrorState();
         void clear();
         bool isClear() const;
-        void message(const char* str) const;
-        const char* message()const;
+        void message(const char* str);
+        const char* message() const;
     };
     std::ostream& operator<<(std::ostream& ostr, ErrorState& error);
 }

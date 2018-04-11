@@ -34,7 +34,7 @@ namespace AMA{
         }
     }
 
-    void ErrorState::message(const char* str){
+    void ErrorState::message(const char* str) {
         clear();
         msg = new char[strlen(str)];
         strncpy(msg, str, strlen(str));
@@ -52,5 +52,4 @@ namespace AMA{
             return ostr;
         }
     }
-    
 }

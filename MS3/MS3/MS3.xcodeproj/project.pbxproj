@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		E112FE20207C39630054AA6A /* MyProduct.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E112FE1D207C39630054AA6A /* MyProduct.cpp */; };
 		E112FE21207C39630054AA6A /* ms3_tester.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E112FE1F207C39630054AA6A /* ms3_tester.cpp */; };
-		E112FE24207C3D110054AA6A /* Product.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E112FE22207C3D110054AA6A /* Product.cpp */; };
+		E112FE2C207D55A40054AA6A /* Product.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E112FE26207D55A30054AA6A /* Product.cpp */; };
+		E112FE2D207D55A40054AA6A /* ErrorState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E112FE27207D55A30054AA6A /* ErrorState.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,8 +30,10 @@
 		E112FE1D207C39630054AA6A /* MyProduct.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MyProduct.cpp; path = ../../MyProduct.cpp; sourceTree = "<group>"; };
 		E112FE1E207C39630054AA6A /* MyProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyProduct.h; path = ../../MyProduct.h; sourceTree = "<group>"; };
 		E112FE1F207C39630054AA6A /* ms3_tester.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ms3_tester.cpp; path = ../../ms3_tester.cpp; sourceTree = "<group>"; };
-		E112FE22207C3D110054AA6A /* Product.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Product.cpp; path = ../../Product.cpp; sourceTree = "<group>"; };
-		E112FE23207C3D110054AA6A /* Product.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Product.h; path = ../../Product.h; sourceTree = "<group>"; };
+		E112FE26207D55A30054AA6A /* Product.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Product.cpp; path = ../../Product.cpp; sourceTree = "<group>"; };
+		E112FE27207D55A30054AA6A /* ErrorState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ErrorState.cpp; path = ../../ErrorState.cpp; sourceTree = "<group>"; };
+		E112FE28207D55A30054AA6A /* ErrorState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ErrorState.h; path = ../../ErrorState.h; sourceTree = "<group>"; };
+		E112FE2A207D55A30054AA6A /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Product.h; path = ../../Product.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,11 +66,13 @@
 		E112FE15207C39200054AA6A /* MS3 */ = {
 			isa = PBXGroup;
 			children = (
+				E112FE27207D55A30054AA6A /* ErrorState.cpp */,
+				E112FE28207D55A30054AA6A /* ErrorState.h */,
+				E112FE26207D55A30054AA6A /* Product.cpp */,
+				E112FE2A207D55A30054AA6A /* Product.h */,
 				E112FE1F207C39630054AA6A /* ms3_tester.cpp */,
 				E112FE1D207C39630054AA6A /* MyProduct.cpp */,
 				E112FE1E207C39630054AA6A /* MyProduct.h */,
-				E112FE22207C3D110054AA6A /* Product.cpp */,
-				E112FE23207C3D110054AA6A /* Product.h */,
 			);
 			path = MS3;
 			sourceTree = "<group>";
@@ -130,7 +135,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E112FE21207C39630054AA6A /* ms3_tester.cpp in Sources */,
-				E112FE24207C3D110054AA6A /* Product.cpp in Sources */,
+				E112FE2C207D55A40054AA6A /* Product.cpp in Sources */,
+				E112FE2D207D55A40054AA6A /* ErrorState.cpp in Sources */,
 				E112FE20207C39630054AA6A /* MyProduct.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

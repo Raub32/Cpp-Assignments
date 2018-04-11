@@ -11,17 +11,18 @@
 
 #include <stdio.h>
 #include <iostream>
+#include "ErrorState.h"
 
 namespace AMA{
-    #define MAX_SKU_NUM 7
-    #define MAX_DECRIPTER_LENGTH 10
-    #define MAX_PRODUCT_NAME_LENGTH 75
+    #define max_sku_length 7
+    #define max_unit_length 10
+    #define max_name_length 75
     #define TAX_RATE 13
     
     class Product{
         char * _productType;
-        char _productSku[MAX_SKU_NUM];
-        char productUnits[MAX_DECRIPTER_LENGTH];
+        char _productSku[max_sku_length];
+        char productUnits[max_unit_length];
         char * productName;
         int inStock;
         int productsRequierd;
@@ -47,7 +48,22 @@ namespace AMA{
         void operator=(const Product& product);
         ~Product();
         std::fstream& store(std::fstream& file, bool newline = true) const;
+        std::fstream& load(std::fstream& file);
+        std::ostream& write(std::ostream& os, bool linear) const;
+        std::istream& read(std::istream& is);
+        bool operator==(const char*) const;
+        double total_cost() const;
+        void quantity(int);
+        bool isEmpty() const;
+        int qtyNeeded() const;
+        int quantity() const;
+        bool operator>(const char* ) const;
+        bool operator>(const Product& ) const;
+        int operator+=(int);
     };
+    std::ostream& operator<<(std::ostream&, const Product& );
+    std::istream& operator>>(std::istream&, const Product& );
+    double operator+=(double &, const Product&);
 }
 
 #endif /* Product_hpp */
