@@ -15,24 +15,21 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Allocator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="ms4_tester.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="NonPerishable.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ErrorMessage.cpp">
+    <ClCompile Include="MyProduct.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Product.h">
+    <ClInclude Include="iProduct.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="NonPerishable.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ErrorMessage.h">
+    <ClInclude Include="MyProduct.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

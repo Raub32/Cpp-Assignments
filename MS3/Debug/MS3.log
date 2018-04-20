@@ -1,0 +1,39 @@
+﻿  Product.cpp
+c:\users\robert\onedrive\oop244\cpp-assignments\ms3\product.cpp(44): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\string.h(343): note: see declaration of 'strncpy'
+c:\users\robert\onedrive\oop244\cpp-assignments\ms3\product.cpp(59): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\string.h(343): note: see declaration of 'strncpy'
+c:\users\robert\onedrive\oop244\cpp-assignments\ms3\product.cpp(60): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\string.h(343): note: see declaration of 'strncpy'
+c:\users\robert\onedrive\oop244\cpp-assignments\ms3\product.cpp(70): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\string.h(343): note: see declaration of 'strncpy'
+c:\users\robert\onedrive\oop244\cpp-assignments\ms3\product.cpp(71): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\string.h(343): note: see declaration of 'strncpy'
+c:\users\robert\onedrive\oop244\cpp-assignments\ms3\product.cpp(155): error C3861: 'width': identifier not found
+c:\users\robert\onedrive\oop244\cpp-assignments\ms3\product.cpp(155): error C3861: 'setfill': identifier not found
+c:\users\robert\onedrive\oop244\cpp-assignments\ms3\product.cpp(156): error C2664: 'int getw(FILE *)': cannot convert argument 1 from 'int' to 'FILE *'
+  c:\users\robert\onedrive\oop244\cpp-assignments\ms3\product.cpp(156): note: Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or function-style cast
+c:\users\robert\onedrive\oop244\cpp-assignments\ms3\product.cpp(156): error C3861: 'setfill': identifier not found
+c:\users\robert\onedrive\oop244\cpp-assignments\ms3\product.cpp(158): error C3861: 'setfill': identifier not found
+c:\users\robert\onedrive\oop244\cpp-assignments\ms3\product.cpp(158): error C2664: 'int getw(FILE *)': cannot convert argument 1 from 'int' to 'FILE *'
+  c:\users\robert\onedrive\oop244\cpp-assignments\ms3\product.cpp(158): note: Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or function-style cast
+c:\users\robert\onedrive\oop244\cpp-assignments\ms3\product.cpp(158): error C3861: 'setprecision': identifier not found
+c:\users\robert\onedrive\oop244\cpp-assignments\ms3\product.cpp(161): error C2065: 'right': undeclared identifier
+c:\users\robert\onedrive\oop244\cpp-assignments\ms3\product.cpp(161): error C3861: 'setw': identifier not found
+c:\users\robert\onedrive\oop244\cpp-assignments\ms3\product.cpp(161): error C3861: 'setfill': identifier not found
+c:\users\robert\onedrive\oop244\cpp-assignments\ms3\product.cpp(161): error C2065: 'fixed': undeclared identifier
+c:\users\robert\onedrive\oop244\cpp-assignments\ms3\product.cpp(162): error C2065: 'left': undeclared identifier
+c:\users\robert\onedrive\oop244\cpp-assignments\ms3\product.cpp(162): error C3861: 'setw': identifier not found
+c:\users\robert\onedrive\oop244\cpp-assignments\ms3\product.cpp(162): error C3861: 'setfill': identifier not found
+c:\users\robert\onedrive\oop244\cpp-assignments\ms3\product.cpp(163): error C2065: 'right': undeclared identifier
+c:\users\robert\onedrive\oop244\cpp-assignments\ms3\product.cpp(163): error C3861: 'setw': identifier not found
+c:\users\robert\onedrive\oop244\cpp-assignments\ms3\product.cpp(163): error C3861: 'setfill': identifier not found
+c:\users\robert\onedrive\oop244\cpp-assignments\ms3\product.cpp(163): error C2065: 'fixed': undeclared identifier
+  MyProduct.cpp
+  ms3_tester.cpp
+  ErrorState.cpp
+c:\users\robert\onedrive\oop244\cpp-assignments\ms3\errorstate.cpp(14): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\string.h(343): note: see declaration of 'strncpy'
+c:\users\robert\onedrive\oop244\cpp-assignments\ms3\errorstate.cpp(40): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\string.h(343): note: see declaration of 'strncpy'
+  Generating Code...

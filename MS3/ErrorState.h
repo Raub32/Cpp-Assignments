@@ -15,6 +15,7 @@ namespace AMA {
         bool isClear() const;
         void message(const char* str);
         const char* message() const;
+        void setErr( char *);
     };
     std::ostream& operator<<(std::ostream& ostr, ErrorState& error);
 }

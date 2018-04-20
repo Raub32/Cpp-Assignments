@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:/Users/OneDrive/OOP244/Cpp-Assignments/MS4/MS4/MS4/MyProduct.cpp">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/OneDrive/OOP244/Cpp-Assignments/MS4/MS4/MS4/MyProduct.h">
+   </FileRef>
+   <FileRef
+      location = "self:">
+   </FileRef>
+</Workspace>

@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include <iostream>
 #include "ErrorState.h"
+#include <fstream>
 
 namespace AMA{
     #define max_sku_length 7
@@ -20,14 +21,15 @@ namespace AMA{
     #define TAX_RATE 13
     
     class Product{
-        char * _productType;
+        char  _productType;
         char _productSku[max_sku_length];
         char productUnits[max_unit_length];
         char * productName;
         int inStock;
-        int productsRequierd;
+        int productsRequired;
         double productPrice;
         bool isTaxable;
+        char * err;
         ErrorState Error;
     protected:
         void name(const char* _name);
@@ -37,13 +39,13 @@ namespace AMA{
         bool taxed() const;
         double price() const;
         double cost() const;
-        void message(const char * message) const;
+        void message(const char *) const;
         bool isClear() const;
         
     public:
         Product();
         Product(char prodtype = 'N' );
-        Product(const char* sku, const char* name, const char* units, int quantity = 0, bool taxable = true, double price = 0, int prodNeeded = 0 );
+        Product(const char* sku, const char* name, const char* units, int quantity = 0 , bool taxable = true, double price = 0, int prodNeeded = 0 );
         Product(const Product& product);
         void operator=(const Product& product);
         ~Product();
@@ -61,8 +63,8 @@ namespace AMA{
         bool operator>(const Product& ) const;
         int operator+=(int);
     };
-    std::ostream& operator<<(std::ostream&, const Product& );
-    std::istream& operator>>(std::istream&, const Product& );
+    std::ostream& operator<<( std::ostream&, const Product& );
+    std::istream& operator>>(std::istream&, Product& );
     double operator+=(double &, const Product&);
 }
 

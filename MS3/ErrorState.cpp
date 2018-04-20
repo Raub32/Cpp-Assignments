@@ -33,11 +33,12 @@ namespace AMA{
             return false;
         }
     }
-
     void ErrorState::message(const char* str) {
         clear();
-        msg = new char[strlen(str)];
-        strncpy(msg, str, strlen(str));
+        if(str != nullptr){
+            msg = new char[strlen(str)];
+            strncpy(msg, str, strlen(str));
+        }
     }
     
     const char* ErrorState::message()const{
