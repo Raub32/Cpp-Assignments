@@ -18,9 +18,9 @@ namespace AMA {
 
 	// creates an empty product
 	//
-	iProduct* CreateProduct() {
-		return new Product();
-	}
+    iProduct* CreateProduct() {
+        return new Product();
+    }
 
 	// creates an empty perishable product
 	//

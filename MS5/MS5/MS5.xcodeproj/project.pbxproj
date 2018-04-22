@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E165CD712081BC5300C87FFF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E165CD702081BC5300C87FFF /* main.cpp */; };
+		E1611078208AA42400E064B1 /* ErrorState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E1611075208AA42400E064B1 /* ErrorState.cpp */; };
+		E1611079208AA42400E064B1 /* Product.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E1611077208AA42400E064B1 /* Product.cpp */; };
+		E161107B208AA58F00E064B1 /* Perishable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E161107A208AA58F00E064B1 /* Perishable.cpp */; };
+		E165CD79208392A100C87FFF /* Allocator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E165CD77208392A100C87FFF /* Allocator.cpp */; };
+		E165CD7A208392A100C87FFF /* ms5_tester.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E165CD78208392A100C87FFF /* ms5_tester.cpp */; };
+		E165CD842083ABD900C87FFF /* Date.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E165CD822083ABD900C87FFF /* Date.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +28,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E1611075208AA42400E064B1 /* ErrorState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ErrorState.cpp; path = ../../ErrorState.cpp; sourceTree = "<group>"; };
+		E1611076208AA42400E064B1 /* ErrorState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ErrorState.h; path = ../../ErrorState.h; sourceTree = "<group>"; };
+		E1611077208AA42400E064B1 /* Product.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Product.cpp; path = ../../Product.cpp; sourceTree = "<group>"; };
+		E161107A208AA58F00E064B1 /* Perishable.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Perishable.cpp; path = ../../Perishable.cpp; sourceTree = "<group>"; };
 		E165CD6D2081BC5300C87FFF /* MS5 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MS5; sourceTree = BUILT_PRODUCTS_DIR; };
-		E165CD702081BC5300C87FFF /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		E165CD77208392A100C87FFF /* Allocator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Allocator.cpp; path = ../../Allocator.cpp; sourceTree = "<group>"; };
+		E165CD78208392A100C87FFF /* ms5_tester.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ms5_tester.cpp; path = ../../ms5_tester.cpp; sourceTree = "<group>"; };
+		E165CD7C2083A5CA00C87FFF /* Product.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Product.h; path = ../../Product.h; sourceTree = "<group>"; };
+		E165CD7F2083A60100C87FFF /* Perishable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Perishable.h; path = ../../Perishable.h; sourceTree = "<group>"; };
+		E165CD812083A76A00C87FFF /* iProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iProduct.h; path = ../../iProduct.h; sourceTree = "<group>"; };
+		E165CD822083ABD900C87FFF /* Date.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Date.cpp; path = ../../Date.cpp; sourceTree = "<group>"; };
+		E165CD832083ABD900C87FFF /* Date.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Date.h; path = ../../Date.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +72,17 @@
 		E165CD6F2081BC5300C87FFF /* MS5 */ = {
 			isa = PBXGroup;
 			children = (
-				E165CD702081BC5300C87FFF /* main.cpp */,
+				E165CD812083A76A00C87FFF /* iProduct.h */,
+				E165CD77208392A100C87FFF /* Allocator.cpp */,
+				E1611075208AA42400E064B1 /* ErrorState.cpp */,
+				E1611076208AA42400E064B1 /* ErrorState.h */,
+				E1611077208AA42400E064B1 /* Product.cpp */,
+				E165CD7C2083A5CA00C87FFF /* Product.h */,
+				E165CD7F2083A60100C87FFF /* Perishable.h */,
+				E161107A208AA58F00E064B1 /* Perishable.cpp */,
+				E165CD822083ABD900C87FFF /* Date.cpp */,
+				E165CD832083ABD900C87FFF /* Date.h */,
+				E165CD78208392A100C87FFF /* ms5_tester.cpp */,
 			);
 			path = MS5;
 			sourceTree = "<group>";
@@ -119,7 +144,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E165CD712081BC5300C87FFF /* main.cpp in Sources */,
+				E165CD7A208392A100C87FFF /* ms5_tester.cpp in Sources */,
+				E165CD79208392A100C87FFF /* Allocator.cpp in Sources */,
+				E161107B208AA58F00E064B1 /* Perishable.cpp in Sources */,
+				E1611078208AA42400E064B1 /* ErrorState.cpp in Sources */,
+				E1611079208AA42400E064B1 /* Product.cpp in Sources */,
+				E165CD842083ABD900C87FFF /* Date.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
